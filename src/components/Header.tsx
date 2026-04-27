@@ -26,12 +26,12 @@ export default function Header() {
         </div>
 
         {/* Desktop CTAs */}
-        <div className="nav-links" style={{ gap: "10px" }}>
-          <Link href="/dashboard" className="nav-link">Sign In</Link>
-          <Link href="/assessment" className="btn btn-primary btn-sm">
-            Start Free Assessment
-          </Link>
-        </div>
+          <div className="nav-actions">
+            <Link href="/login" className="nav-link" style={{ fontWeight: 600 }}>Sign In</Link>
+            <Link href="/signup" className="btn btn-primary btn-sm" id="header-cta">
+              Start Free Assessment
+            </Link>
+          </div>
 
         {/* Mobile hamburger */}
         <button

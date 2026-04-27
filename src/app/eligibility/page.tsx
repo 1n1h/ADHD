@@ -91,11 +91,32 @@ function EligibilityContent() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              <Link href="/dashboard" className="btn btn-primary btn-lg" id="goto-dashboard">
-                <ClipboardList size={18} /> Go to My Dashboard
-              </Link>
-              <Link href="/" className="btn btn-ghost">
-                Return to Home
+              <button 
+                onClick={async () => {
+                  try {
+                    const res = await fetch("/api/checkout", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ userId: "mock-user-123" }),
+                    });
+                    const data = await res.json();
+                    if (data.url) {
+                      window.location.href = data.url;
+                    } else {
+                      alert("Error creating checkout session");
+                    }
+                  } catch (err) {
+                    console.error(err);
+                    alert("Checkout failed");
+                  }
+                }}
+                className="btn btn-primary btn-lg" 
+                id="proceed-to-checkout"
+              >
+                <ArrowRight size={18} /> Proceed to Consultation Booking ($149)
+              </button>
+              <Link href="/dashboard" className="btn btn-ghost" id="goto-dashboard">
+                <ClipboardList size={18} /> View My Assessment Status
               </Link>
             </div>
 
