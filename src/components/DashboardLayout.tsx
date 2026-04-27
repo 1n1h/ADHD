@@ -10,15 +10,15 @@ import {
   HeartPulse,
   FileText,
   Settings,
+  Calendar,
 } from "lucide-react";
 
 const links = [
   { href: "/dashboard", label: "Overview", icon: <LayoutDashboard size={16} />, key: "overview" },
-  { href: "/dashboard/intake", label: "Intake Status", icon: <ClipboardList size={16} />, key: "intake" },
+  { href: "/dashboard/schedule", label: "Schedule Visit", icon: <Calendar size={16} />, key: "schedule" },
   { href: "/dashboard/messages", label: "Messages", icon: <MessageSquare size={16} />, key: "messages" },
   { href: "/dashboard/care-plan", label: "Care Plan", icon: <HeartPulse size={16} />, key: "care-plan" },
   { href: "/dashboard/documents", label: "Documents", icon: <FileText size={16} />, key: "documents" },
-  { href: "/dashboard/subscription", label: "Subscription", icon: <CreditCard size={16} />, key: "subscription" },
 ];
 
 export default function DashboardLayout({
